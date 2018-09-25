@@ -19,7 +19,6 @@ defmodule DiscussWeb.Endpoint do
     plug Phoenix.CodeReloader
   end
 
-  plug Plug.RequestId
   plug Plug.Logger
 
   plug Plug.Parsers,
@@ -36,7 +35,7 @@ defmodule DiscussWeb.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_discuss_key",
-    signing_salt: "Itleh4L8"
+    signing_salt: "8nYF76Ap"
 
   plug DiscussWeb.Router
 

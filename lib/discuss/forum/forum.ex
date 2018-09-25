@@ -12,4 +12,8 @@ defmodule Discuss.Forum do
     |> Topic.changeset(attrs)
     |> Repo.insert()
   end
+
+  def change_topic(%Topic{} = topic) do
+    Topic.changeset(topic, %{})
+  end
 end

@@ -12,7 +12,7 @@ config :discuss,
 # Configures the endpoint
 config :discuss, DiscussWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "dL1H2qtVaQOrEFylHhaBLH9QxQJSBHodNxs++XF6DOmJKGE+a+Vf12G2qkyHh7aJ",
+  secret_key_base: "dx/I5ZnkgiXck0D1HwaZzhImnaPD5BBUPXmQxqhmZxuorIhODtoAit+JNKIrHRmM",
   render_errors: [view: DiscussWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Discuss.PubSub,
            adapter: Phoenix.PubSub.PG2]
@@ -20,7 +20,7 @@ config :discuss, DiscussWeb.Endpoint,
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
-  metadata: [:request_id]
+  metadata: [:user_id]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

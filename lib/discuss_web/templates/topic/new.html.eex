@@ -1,9 +1,15 @@
-<%= form_for @changeset, topic_path(@conn, :create), fn f -> %>
-  <div class="form-group">
-    <%= text_input f, :title, placeholder: "Title", class: "form-control" %>
-  </div>
+<div class="row">
+  <div class="col offset-s3 s6">
+    <%= form_for @changeset, topic_path(@conn, :create), fn f -> %>
+      <div class="input-field">
+        <%= text_input f, :title, placeholder: "Title", class: "input-field" %>
+      </div>
 
-  <%= submit class: "btn light-green waves-effect waves-light" do %>
-     <i class="material-icons right">send</i>Save Topic
-  <% end%>
-<% end %>
+      <div class="right-align">
+        <%= submit class: "btn teal lighten-2 waves-effect waves-light" do %>
+          <i class="material-icons right">send</i>Save Topic
+        <% end%>
+      </div>
+    <% end %>
+  </div>
+</div>

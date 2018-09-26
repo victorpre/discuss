@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    <nav class="light-green">
+    <nav class="teal lighten-2">
       <div class="nav-wrapper">
         <div class="container">
           <a href="/" class="brand-logo">Discuss</a>

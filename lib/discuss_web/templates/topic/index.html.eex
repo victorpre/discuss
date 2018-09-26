@@ -1,0 +1,6 @@
+<ul class="collection with-header">
+  <li class="collection-header"><h4>Topics</h4></li>
+  <%= for topic <- @topics do %>
+    <a href="#!" class="collection-item"><li><%= topic.title %></li></a>
+  <% end %>
+</ul>

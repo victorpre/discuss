@@ -16,4 +16,8 @@ defmodule Discuss.Forum do
   def change_topic(%Topic{} = topic) do
     Topic.changeset(topic, %{})
   end
+
+  def all_topics do
+    Repo.all(Topic)
+  end
 end

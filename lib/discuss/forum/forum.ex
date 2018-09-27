@@ -33,4 +33,11 @@ defmodule Discuss.Forum do
     |> Topic.changeset(attrs)
     |> Repo.update
   end
+
+  def delete_topic(%Topic{} = topic) do
+    case Repo.delete(topic) do
+      {:ok, topic} -> :ok
+      {:error, _} -> :error
+    end
+  end
 end

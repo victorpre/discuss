@@ -27,4 +27,10 @@ defmodule Discuss.Forum do
       topic -> {:ok, topic}
     end
   end
+
+  def update_topic(%Topic{} = topic, attrs) do
+    topic
+    |> Topic.changeset(attrs)
+    |> Repo.update
+  end
 end

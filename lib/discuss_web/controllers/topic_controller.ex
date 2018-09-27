@@ -29,7 +29,18 @@ defmodule DiscussWeb.TopicController do
 
   def edit(conn, %{"id" => topic_id}) do
     with {:ok, topic} <- Forum.get_topic(topic_id) do
-      render(conn, "edit.html", topic: topic)
+      changeset = Forum.change_topic(topic)
+      render(conn, "edit.html", topic: topic, changeset: changeset)
+    end
+  end
+
+  def update(conn, %{"id" => id, "topic" => topic_params}) do
+    with {:ok, topic} <- Forum.get_topic(id),
+         {:ok, topic} <- Forum.update_topic(topic, topic_params) do
+
+      conn
+      |> put_flash(:info, "Topic updated successfully")
+      |> redirect(to: topic_path(conn, :index))
     end
   end
 end

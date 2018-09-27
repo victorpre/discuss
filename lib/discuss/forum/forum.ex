@@ -20,4 +20,11 @@ defmodule Discuss.Forum do
   def all_topics do
     Repo.all(Topic)
   end
+
+  def get_topic(id) do
+    case Repo.get(Topic, id) do
+      nil -> {:error, "Could not find topic"}
+      topic -> {:ok, topic}
+    end
+  end
 end

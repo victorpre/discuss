@@ -26,7 +26,7 @@
 
     <div class="container">
       <%= render DiscussWeb.SharedView, "_banner.html", assigns %>
-
+      <div  class="row"></div>
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>

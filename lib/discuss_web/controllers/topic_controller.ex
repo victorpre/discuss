@@ -4,6 +4,8 @@ defmodule DiscussWeb.TopicController do
   alias Discuss.Forum
   alias Discuss.Forum.Topic
 
+  action_fallback DiscussWeb.FallbackController
+
   def new(conn, _params) do
     changeset = Forum.change_topic(%Topic{})
 
@@ -23,5 +25,11 @@ defmodule DiscussWeb.TopicController do
   def index(conn, _params) do
     topics = Forum.all_topics
     render conn, "index.html", topics: topics
+  end
+
+  def edit(conn, %{"id" => topic_id}) do
+    with {:ok, topic} <- Forum.get_topic(topic_id) do
+      render(conn, "edit.html", topic: topic)
+    end
   end
 end

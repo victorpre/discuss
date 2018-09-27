@@ -13,12 +13,10 @@ defmodule DiscussWeb.TopicController do
   end
 
   def create(conn, %{"topic" => topic_params}) do
-    case Forum.create_topic(topic_params) do
-      {:ok, topic} ->
-        conn
-        |> put_flash(:info, "Topic created")
-        |> redirect(to: topic_path(conn, :index))
-      {:error, changeset} -> render conn, "new.html", changeset: changeset
+    with {:ok, topic} <- Forum.create_topic(topic_params) do
+      conn
+      |> put_flash(:info, "Topic created")
+      |> redirect(to: topic_path(conn, :index))
     end
   end
 

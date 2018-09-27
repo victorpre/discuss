@@ -1,7 +1,9 @@
 <ul class="collection with-header">
   <li class="collection-header"><h4>Topics</h4></li>
   <%= for topic <- @topics do %>
-    <a href="#!" class="collection-item"><li><%= topic.title %></li></a>
+    <%= link to: topic_path(@conn, :edit, topic), class: "collection-item" do %>
+      <li><%= topic.title %></li>
+    <% end%>
   <% end %>
 </ul>
 

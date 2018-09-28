@@ -19,7 +19,11 @@
           <a href="/" class="brand-logo">Discuss</a>
         </div>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="/">Login</a></li>
+          <li>
+            <%= link to: auth_path(@conn, :request, "github") do %>
+              Login <i class="material-icons right">lock</i>
+          <% end %>
+          </li>
         </ul>
       </div>
     </nav>
